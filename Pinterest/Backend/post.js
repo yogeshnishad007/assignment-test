@@ -5,6 +5,10 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  users:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref:"User"
+  },
   currentDate: {
     type: Date,
     default: Date.now,

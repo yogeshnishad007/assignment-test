@@ -13,7 +13,10 @@ const mongoose = require('mongoose')
         type: String,
         required: true,
       },
-      posts: [],
+      posts: [{
+         type: mongoose.Schema.Types.ObjectId,
+         ref:"Post"
+      }],
       dp: {
         type: String, 
       },

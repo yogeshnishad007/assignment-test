@@ -12,19 +12,25 @@ app.use(express.json())
 
 app.get("/", async (req, res) => {
 
-    const createUser = await userModel.create({
-        username: "YogiBab",
-        password: "yogi1",
-        posts: [],
-        email: "yogibaba@gmail.com",
-        fullName: "Yogesh"
-    })
-
-
-
-    res.send(createUser)
+    // const createUser = await userModel.create({
+    //     username: "Yogi01",
+    //     password: "yogi01",
+    //     posts: [],
+    //     email: "yogi01@gmail.com",
+    //     fullName: "Yogesh01"
+    // })
+    // res.send(createUser)
 })
 
+
+app.get("/createpost", async (req, res) => {
+
+    const createPost = await postModel.create({
+        postText:"HEllo POst" 
+          
+    })
+    res.send(createPost)
+})
 
 
 app.listen(PORT, () => {
